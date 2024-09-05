@@ -12,7 +12,6 @@ class Application():
         }
 
         self.__model= DataRecord()
-        self.__current_loginusername= None
 
 
     def render(self,page,parameter=None):
@@ -54,7 +53,6 @@ class Application():
         session_id = self.__model.checkUser(username, password)
         if session_id:
             self.logout_user()
-            self.__current_username= self.__model.getUserName(session_id)
             return session_id, username
         return None
 
